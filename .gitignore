@@ -1,5 +1,7 @@
 .idea
 logs
 www/vendor
+www/coverage
 .env
+.env.testing
 */.env

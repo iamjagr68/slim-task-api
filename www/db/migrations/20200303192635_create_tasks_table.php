@@ -4,28 +4,33 @@ use Phinx\Migration\AbstractMigration;
 
 class CreateTasksTable extends AbstractMigration
 {
-    public function up()
+
+    public function change()
     {
-        $this->execute(<<<SQL
-create table task
-(
-	id int auto_increment primary key, 
-	task varchar(255) null, 
-	is_done bool default 0 null,
-	is_deleted bool default 0 null,
-	created datetime default current_timestamp not null,
-	modified datetime default current_timestamp ON UPDATE CURRENT_TIMESTAMP not null
-);
-
-create unique index task_id_uindex
-	on task (id);
-
-SQL
-        );
+        $table = $this->table('task', ['signed' => false]);
+        $table->addColumn('task', 'string', [
+            'limit'   => 255,
+            'null'    => true,
+        ])->addColumn('is_done', 'boolean', [
+            'default' => 0,
+            'limit'   => 1,
+            'signed'  => false,
+            'null'    => true,
+        ])
+        ->addColumn('is_deleted', 'boolean', [
+            'default' => 0,
+            'limit'   => 1,
+            'signed'  => false,
+            'null'    => true,
+        ])
+        ->addColumn('created', 'datetime', [
+            'default' => 'CURRENT_TIMESTAMP'
+        ])
+        ->addColumn('modified', 'datetime', [
+            'default' => 'CURRENT_TIMESTAMP',
+            'update'  => 'CURRENT_TIMESTAMP',
+        ])
+        ->create();
     }
 
-    public function down()
-    {
-        $this->table('task')->drop()->save();
-    }
 }

@@ -22,7 +22,7 @@ final class Delete extends Base
             throw new NotFoundException();
         }
 
-        return $this->jsonResponse($res, 204);
+        return $res->withStatus(204);
     }
 
 }

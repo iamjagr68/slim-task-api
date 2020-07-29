@@ -13,8 +13,7 @@
         <link rel="stylesheet" href="//cdn.datatables.net/buttons/1.6.2/css/buttons.bootstrap4.min.css" crossorigin="anonymous">
         <!-- Font Awesome CSS -->
         <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
-
-        <link rel="stylesheet" href="./css/tasklist.css">
+        <link rel="stylesheet" href="./assets/css/tasklist.min.css">
 
         <title>Task List</title>
     </head>
@@ -45,6 +44,6 @@
         <script src="//cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         <script src="//cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js" crossorigin="anonymous"></script>
         <script src="//cdn.datatables.net/buttons/1.6.2/js/buttons.bootstrap4.min.js" crossorigin="anonymous"></script>
-        <script src="./js/tasklist.js"></script>
+        <script src="./assets/js/tasklist.min.js"></script>
     </body>
 </html>
