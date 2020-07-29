@@ -1,5 +1,11 @@
 <?php
 
+use \Symfony\Component\Dotenv\Dotenv;
+
+// Load up .env vars into $_ENV/$_SERVER super globals
+$dotenv = new Dotenv();
+$dotenv->load(__DIR__ . '/.env.testing');
+
 return
 [
     'paths' => [
@@ -21,18 +27,18 @@ return
         'development' => [
             'adapter' => 'mysql',
             'host' => 'mend-mysql',
-            'name' => 'png',
-            'user' => 'root',
-            'pass' => 'tiger',
+            'name' => $_ENV['DB_NAME'],
+            'user' => $_ENV['DB_ROOT_USER'],
+            'pass' => $_ENV['DB_ROOT_PASS'],
             'port' => 3306,
             'charset' => 'utf8',
         ],
         'testing' => [
             'adapter' => 'mysql',
             'host' => 'mend-mysql',
-            'name' => 'png_testing',
-            'user' => 'root',
-            'pass' => 'tiger',
+            'name' => $_ENV['DB_NAME'],
+            'user' => $_ENV['DB_ROOT_USER'],
+            'pass' => $_ENV['DB_ROOT_PASS'],
             'port' => 3306,
             'charset' => 'utf8',
         ]
