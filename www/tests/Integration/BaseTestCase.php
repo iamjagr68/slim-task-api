@@ -42,7 +42,7 @@ class BaseTestCase extends TestCase
     public static function tearDownAfterClass()
     {
         // Execute Phinx rollback
-        exec('vendor/bin/phinx rollback -e testing');
+        exec('vendor/bin/phinx rollback -t 0 -e testing');
 
         // Kill pdo connection
         self::$pdo = null;

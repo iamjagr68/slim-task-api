@@ -16,6 +16,6 @@
     "scripts": {
         "test": "./vendor/bin/phpunit",
         "coverage": "./vendor/bin/phpunit --coverage-html=coverage --coverage-text",
-        "reset-db": "./vendor/bin/phinx rollback && ./vendor/bin/phinx migrate && ./vendor/bin/phinx seed:run"
+        "reset-db": "./vendor/bin/phinx rollback -t 0 && ./vendor/bin/phinx migrate && ./vendor/bin/phinx seed:run"
     }
 }
