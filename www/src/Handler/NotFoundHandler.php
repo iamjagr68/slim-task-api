@@ -4,8 +4,8 @@ namespace App\Handler;
 
 use App\Exception\NotFoundException;
 use Slim\Handlers\NotFound;
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface as Response;
 
 final class NotFoundHandler extends NotFound
 {

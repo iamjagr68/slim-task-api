@@ -2,9 +2,9 @@
 
 namespace App\Handler;
 
-use \Slim\Handlers\Error;
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
+use Slim\Handlers\Error;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface as Response;
 use App\Exception\ApiException;
 
 final class ApiErrorHandler extends Error
